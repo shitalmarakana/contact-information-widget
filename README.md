@@ -1,25 +1,18 @@
 # Contact Information Widget
 
-Contributors: Shital Patel(Shital Marakana), Shine Infoware
-
-Website: http://shineinfoware.com
-
-Donate link: http://shitalmarakana.com/donate/
-
+Contributors: shital-patel
+Author: Shital Marakana
+Website: http://shitalmarakana.com
+Donate link: http://shitalmarakana.com
 Text Domain: contact-information-widget
-
 Tags: Contact Information Widget, contact-information-widget, Contact Us Widget, Contact Me Widget, Contact Us Widget plugin, Contact Information plugin
-
 Requires at least: 3.5.0
+Tested up to: 4.8.2
+Stable tag: 1.3.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Tested up to: 4.7.0
-
-Stable tag: 1.1.0
-
-License: GPLv2 or later
-
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+Easily add a Contact Information Widget to your widgetable sidebar. With this plugin you can add a contact information.
 
 == Description ==
 
@@ -40,6 +33,11 @@ Alternatively:
 3. Click install `Contact Information Widget`
 4. Activate through the `Plugins` menu in WordPress or when asked during installation
 5. Set your options from the Contact Information Widget admin area
+
+= Minimum Requirements =
+
+* PHP version 5.2.4 or greater (PHP 5.6 or greater is recommended)
+* MySQL version 5.0 or greater (MySQL 5.6 or greater is recommended)
 
 == Frequently Asked Questions ==
 
@@ -69,3 +67,9 @@ Not currently. There may be options for this in the future.
 
 = 1.1 =
 1.1 is a update so it is important that you make backups, and ensure themes is 1.0 compatible.
+
+= 1.2 =
+1.2 is Tested up to to 4.8.2
+
+= 1.3 =
+1.3 is Tested up to to 4.9
