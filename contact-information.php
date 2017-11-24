@@ -1,15 +1,16 @@
 <?php 
 /*
- Contributors: Shital Patel, Shine Infoware
- Plugin Name: Contact Information Widget
- Plugin URI: http://shineinfoware.com
- Description: This plugin use for contact information like: Company Name, Address, Phone Number, Email Address. You can use widgets to display it anywhere you want.
- Version: 1.1.0
- Author: Shine Infoware
- Author URI: http://shineinfoware.com
- Text Domain: contact-information-widget
- License: GPL2
- Tags: contact-information, Contact Information Widget, company name, company address, company phone number, company email address.
+ * Contributors: shital-patel
+ * Plugin Name: Contact Information Widget
+ * Plugin URI: https://wordpress.org/plugins/contact-information-widget/
+ * Description: This plugin use for contact information like: Company Name, Address, Phone Number, Email Address. You can use widgets to display it anywhere you want.
+ * Version: 1.3.0
+ * Author: Shital Marakana
+ * Author URI: http://shitalmarakana.com
+ * Text Domain: contact-information-widget
+ * License: GPLv3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * Tags: contact-information, Contact Information Widget, company name, company address, company phone number, company email address.
 */
 // Block direct requests
 if ( !defined('ABSPATH') ) {
@@ -40,8 +41,8 @@ class ContactInformation_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'contactinformation_widget', // Base ID
-			__( 'Contact Information Widget', 'text_domain' ), // Name
-			array( 'description' => __( 'Display your company name and contact information. ', 'text_domain' ), ) // Args
+			__( 'Contact Information Widget', 'contact-information-widget' ), // Name
+			array( 'description' => __( 'Display your company name and contact information. ', 'contact-information-widget' ), ) // Args
 		);
 	}
 
@@ -87,7 +88,7 @@ class ContactInformation_Widget extends WP_Widget {
 		
 	//$output .='</ul>';
 			echo $output;
-		//echo __( $output, 'text_domain' );
+		//echo __( $output, 'contact-information-widget' );
 			
 		
 	echo $args['after_widget'];
@@ -101,30 +102,30 @@ class ContactInformation_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Contact Us', 'text_domain' );
-		$company_name = ! empty( $instance['company_name'] ) ? $instance['company_name'] : __( '', 'text_domain' );
-		$address = ! empty( $instance['address'] ) ? $instance['address'] : __( '', 'text_domain' );
-		$phone = ! empty( $instance['phone'] ) ? $instance['phone'] : __( '', 'text_domain' );
-		$contact_email = ! empty( $instance['contact_email'] ) ? $instance['contact_email'] : __( '', 'text_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Contact Us', 'contact-information-widget' );
+		$company_name = ! empty( $instance['company_name'] ) ? $instance['company_name'] : __( '', 'contact-information-widget' );
+		$address = ! empty( $instance['address'] ) ? $instance['address'] : __( '', 'contact-information-widget' );
+		$phone = ! empty( $instance['phone'] ) ? $instance['phone'] : __( '', 'contact-information-widget' );
+		$contact_email = ! empty( $instance['contact_email'] ) ? $instance['contact_email'] : __( '', 'contact-information-widget' );
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
         <p>
-		<label for="<?php echo $this->get_field_id( 'company_name' ); ?>"><?php _e( 'Company Name:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'company_name' ); ?>"><?php esc_html_e( 'Company Name:' ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id( 'company_name' ); ?>" name="<?php echo $this->get_field_name( 'company_name' ); ?>" type="text" value="<?php echo esc_attr( $company_name ); ?>">
 		</p>
         <p>
-		<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php esc_html_e( 'Address:' ); ?></label> 
         <textarea class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>"><?php echo esc_attr( $address ); ?></textarea>
 		</p>
         <p>
-		<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e( 'Phone No.:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php esc_html_e( 'Phone No.:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>">
 		</p>
         <p>
-		<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>"><?php _e( 'Email ID:' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'contact_email' ); ?>"><?php esc_html_e( 'Email ID:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'contact_email' ); ?>" name="<?php echo $this->get_field_name( 'contact_email' ); ?>" type="email" value="<?php echo esc_attr( $contact_email ); ?>">
 		</p>
       	<?php 
